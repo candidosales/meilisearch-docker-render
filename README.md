@@ -1,6 +1,6 @@
 # meilisearch-docker-render
 
-Deploy Meilisearch to render.com
+Deploy Meilisearch to render.com and fly.io
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
@@ -30,3 +30,12 @@ Launch a container
 ```bash
 docker run --env MEILI_MASTER_KEY=0xIMnKxGoGmSx0u3cBXKCjvhuFDfnul4 -p 7700:7700 -d meilisearch
 ```
+
+## Deploy fly.io
+
+```bash
+fly launch
+fly deploy
+```
+
+Reference: https://dev.to/jakovglavac/deploy-meilisearch-on-flyio-p89
