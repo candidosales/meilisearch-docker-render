@@ -12,7 +12,7 @@ kill_timeout = '5s'
 auto_rollback = true
 
 [build]
-image = 'getmeili/meilisearch:v1.9.0'
+image = 'getmeili/meilisearch:v1.11.1'
 
 [[mounts]]
 source = 'meili'
