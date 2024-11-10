@@ -34,7 +34,10 @@ docker run --env MEILI_MASTER_KEY=0xIMnKxGoGmSx0u3cBXKCjvhuFDfnul4 -p 7700:7700 
 ## Deploy fly.io
 
 ```bash
+## Create a new app
 fly launch
+
+## Deploy or update for the new version
 fly deploy
 ```
 
