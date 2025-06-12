@@ -1,48 +1,48 @@
-# fly.toml app configuration file generated for meilisearch-dark-haze-4141 on 2024-07-30T13:50:54-04:00
+# fly.toml app configuration file generated for meilisearch-dark-haze-4142 on 2025-06-11T20:41:54-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'meilisearch-dark-haze-4141'
+app = 'meilisearch-dark-haze-4142'
 primary_region = 'gru'
 kill_signal = 'SIGINT'
 kill_timeout = '5s'
 
 [experimental]
-auto_rollback = true
+  auto_rollback = true
 
 [build]
-image = 'getmeili/meilisearch:v1.11.1'
+  image = 'getmeili/meilisearch:v1.15.1'
 
 [[mounts]]
-source = 'meili'
-destination = '/meili_data'
+  source = 'meili'
+  destination = '/meili_data'
 
 [[services]]
-protocol = 'tcp'
-internal_port = 7700
-processes = ['app']
+  protocol = 'tcp'
+  internal_port = 7700
+  processes = ['app']
 
-[[services.ports]]
-port = 80
-handlers = ['http']
-force_https = true
+  [[services.ports]]
+    port = 80
+    handlers = ['http']
+    force_https = true
 
-[[services.ports]]
-port = 443
-handlers = ['tls', 'http']
+  [[services.ports]]
+    port = 443
+    handlers = ['tls', 'http']
 
-[services.concurrency]
-type = 'connections'
-hard_limit = 25
-soft_limit = 20
+  [services.concurrency]
+    type = 'connections'
+    hard_limit = 25
+    soft_limit = 20
 
-[[services.tcp_checks]]
-interval = '15s'
-timeout = '2s'
-grace_period = '1s'
+  [[services.tcp_checks]]
+    interval = '15s'
+    timeout = '2s'
+    grace_period = '1s'
 
 [[vm]]
-memory = '1gb'
-cpu_kind = 'shared'
-cpus = 1
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
