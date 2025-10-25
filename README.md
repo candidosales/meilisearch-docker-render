@@ -42,3 +42,14 @@ fly deploy
 ```
 
 Reference: https://dev.to/jakovglavac/deploy-meilisearch-on-flyio-p89
+
+## Deploy in fly.io
+
+It always is a problem because the database version is not compatible with the engine version. So, I delete the volume and recreate it.
+
+```bash
+gru [info]2025-10-25T19:54:19.707867Z ERROR meilisearch: error=Your database version (1.15.1) is incompatible with your current engine version (1.24.0).
+2025-10-25T19:54:19Z app[d8d9e17b2e3768] gru [info]To migrate data between Meilisearch versions, please follow our guide on https://www.meilisearch.com/docs/learn/update_and_migration/updating.
+2025-10-25T19:54:19Z app[d8d9e17b2e3768] gru [info]Error: Your database version (1.15.1) is incompatible with your current engine version (1.24.0).
+2025-10-25T19:54:19Z app[d8d9e17b2e3768] gr
+```
