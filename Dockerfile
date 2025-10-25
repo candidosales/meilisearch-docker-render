@@ -1,3 +1,3 @@
-FROM getmeili/meilisearch:v1.15.1
+FROM getmeili/meilisearch:v1.24.0
 
 EXPOSE 7700
