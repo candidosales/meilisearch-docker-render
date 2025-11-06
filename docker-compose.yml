@@ -11,7 +11,7 @@ services:
       - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
     restart: unless-stopped
     networks:
-      - meilisearch-network
+      - dokploy-network
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.meilisearch.rule=Host(`meilisearch-api-wagqjw-162246-178-156-181-30.traefik.me`)"
@@ -19,5 +19,5 @@ services:
       - "traefik.http.routers.meilisearch.tls.certResolver=letsencrypt"
       - "traefik.http.services.meilisearch.loadbalancer.server.port=3000"
 networks:
-  meilisearch-network:
+  dokploy-network:
     external: true
