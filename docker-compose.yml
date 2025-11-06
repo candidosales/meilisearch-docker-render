@@ -10,9 +10,6 @@ services:
       - MEILI_ENV=production
       - MEILI_MASTER_KEY=true
       - MEILI_HTTP_ADDR=0.0.0.0:7700
-      - MEILI_DB_PATH=/meili-data
-    volumes:
-      - meili-data:/meili-data
     restart: unless-stopped
     networks:
       - meilisearch-network
