@@ -1,0 +1,21 @@
+services:
+  meilisearch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: meilisearch
+    ports:
+      - "7700:7700"
+    environment:
+      - MEILI_ENV=production
+      - MEILI_MASTER_KEY=true
+      - MEILI_HTTP_ADDR=0.0.0.0:7700
+      - MEILI_DB_PATH=/meili-data
+    volumes:
+      - meili-data:/meili-data
+    restart: unless-stopped
+    networks:
+      - meilisearch-network
+networks:
+  meilisearch-network:
+    driver: bridge
