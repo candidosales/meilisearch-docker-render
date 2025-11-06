@@ -10,8 +10,3 @@ services:
       - MEILI_ENV=development
       - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
     restart: unless-stopped
-    networks:
-      - meilisearch-network
-networks:
-  meilisearch-network:
-    driver: bridge
