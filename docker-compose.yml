@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: meilisearch
     ports:
-      - "7700:7700"
+      - 7700
     environment:
       - MEILI_ENV=development
       - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
@@ -14,7 +14,7 @@ services:
       - dokploy-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.meilisearch.rule=Host(`meilisearch-api-a-3qb4pi-511397-178-156-181-30.traefik.me`)"
+      - "traefik.http.routers.meilisearch.rule=Host(`meilisearch.vps-wings.org`)"
       - "traefik.http.routers.meilisearch.entrypoints=websecure"
       - "traefik.http.routers.meilisearch.tls.certResolver=letsencrypt"
       - "traefik.http.services.meilisearch.loadbalancer.server.port=3000"
