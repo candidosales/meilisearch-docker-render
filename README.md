@@ -53,3 +53,7 @@ gru [info]2025-10-25T19:54:19.707867Z ERROR meilisearch: error=Your database ver
 2025-10-25T19:54:19Z app[d8d9e17b2e3768] gru [info]Error: Your database version (1.15.1) is incompatible with your current engine version (1.24.0).
 2025-10-25T19:54:19Z app[d8d9e17b2e3768] gr
 ```
+
+```
+fly machine update 2865ed3c7936e8 --vm-memory 1024 --app strapi-turismo-piaui-db
+```
